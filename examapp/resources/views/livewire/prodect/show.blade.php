@@ -32,16 +32,17 @@
                     <td class="px-6 py-4">
                         {{$prodect->name}}
                     </td>
-                   
+
                     <td class="px-6 py-4">
-                    {{$prodect->price}}
+                        {{$prodect->price}}
                     </td>
                     <td class="px-6 py-4">
-                    {{$prodect->count}}
+                        {{$prodect->count}}
                     </td>
 
                     <td class="px-6 py-4 text-right">
-                        <a  href="#" wire:click="delete({{$prodect->id}})" class="font-medium text-blue-600 dark:text-red-500 hover:underline">Delete</a>
+                        <a href="#" wire:click="delete({{$prodect->id}})"
+                            class="font-medium text-blue-600 dark:text-red-500 hover:underline">Delete</a>
                     </td>
                     @empty
                     <td colspan="4" class="px-6 py-4">

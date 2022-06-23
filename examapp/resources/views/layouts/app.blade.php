@@ -37,10 +37,12 @@
             <main>
 
                 <div class=" container mx-auto mt-5 bg-white px-5 py-5 rounded-lg">
+                    
                 {{ $slot }}  
                 </div>
 
             </main>
+            
         </div>
 
         @stack('modals')
