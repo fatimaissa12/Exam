@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('receive_orders', function (Blueprint $table) {
+        Schema::create('order_suppliers', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
+            $table->foreignId('order_id')->nullable()->constrained('orders')->onDelete('set null');
+            $table->foreignId('supplier_id')->nullable()->constrained('suppliers')->onDelete('set null');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('receive_orders');
+        Schema::dropIfExists('order_suppliers');
     }
 };

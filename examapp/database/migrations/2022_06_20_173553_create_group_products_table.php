@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('group_products', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('prodect_id')->nullable()->constrained('prodects')->onDelete('set null');
             $table->string('name');
             $table->timestamps();
         });
