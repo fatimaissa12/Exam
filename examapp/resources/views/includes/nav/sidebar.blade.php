@@ -1,4 +1,4 @@
-<aside :class="isOpen?'w-64':'w-0'" class=" h-screen overflow-y-auto bg-blue-800" id="sidbar">
+<aside :class="isOpen?'w-64':'w-0'" class=" h-full overflow-y-auto bg-blue-800" id="sidbar">
     <div class="grid justify-items-center pl-1.5 mb-5 ">
         <span class=" text-xl font-semibold whitespace-nowrap dark:text-white pt-2">LOGO</span>
         <div class="bg-local  w-full h-20 bg-cover bg-center "

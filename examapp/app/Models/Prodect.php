@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Prodect extends Model
 {
     use HasFactory;
+
+    protected $fillable =['name','price','code','image'];
+
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -29,5 +32,5 @@ class Prodect extends Model
         return $this->belongsToMany(Order::class);
     }
     
-    protected $fillable =['name','price','count'];
+    
 }

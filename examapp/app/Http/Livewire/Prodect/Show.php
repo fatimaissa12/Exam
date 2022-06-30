@@ -2,12 +2,15 @@
 
 namespace App\Http\Livewire\Prodect;
 use App\Models\Prodect;
+use Livewire\WithPagination;
 use Livewire\Component;
+
 
 class Show extends Component
 {
-
-
+ 
+    use WithPagination;
+     
     protected $listeners = [
 
         '$refresh',
@@ -19,12 +22,19 @@ class Show extends Component
         $this->emitTo('prodect.show' ,'$refresh');
 
     }
+  
+    public function paginationView()
+    {
+        return 'vendor.livewire.tailwind';
+
+    }
+
 
     public function render()
     {
-        $prodects = Prodect::get(['id','name','price','count']);
+        
         return view('livewire.prodect.show',[
-            'prodects' =>  $prodects
+            'prodects' =>  Prodect::paginate(1),
         ]);
     }
 }

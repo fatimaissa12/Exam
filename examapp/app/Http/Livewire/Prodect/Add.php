@@ -4,28 +4,59 @@ namespace App\Http\Livewire\Prodect;
 
 use Livewire\Component;
 use App\Models\Prodect;
+use Livewire\WithFileUploads;
 
 class Add extends Component
 {
+    use WithFileUploads;
+
     public $name;
-    public $dscription;
+    public $image;
     public $price;
-    public $count;
+    public $code;
+   
+
+    protected $rules = [
+        'name' => 'required',
+        'price'=> 'required',
+        'code' => 'required',
+    ];
 
     public function add()
     {
-        Prodect::create([
+       
+        if( $newimage = $this->image){
+            $newimage = $this->image->store('public/avatars');
+        }
+        
 
-            'name' => $this->name,
-            'price' => $this->price,
-            'count' => $this->count,
-            
-        ]);   
-  
+        Prodect::create([
+          'name' => $this->name,
+          'image' => $newimage,
+          'price' => $this->price,
+          'code' => $this->code
+        ]);
+
+       $this->validate();
+       $data = [
+           'name' => $this->name,
+           'price' => $this->price,
+           'code' => $this->code,
+       ];
+
+        $this->resetInputFields();
         $this->emitTo('prodect.show' ,'$refresh');
     }
+
+    private function resetInputFields(){
+        $this-> name= '';
+        $this-> image= '';
+        $this-> code= '';
+        $this-> price= '';
+    }
+
     public function render()
-    {
+    { 
         return view('livewire.prodect.add');
     }
 }

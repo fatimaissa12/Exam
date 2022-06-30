@@ -19,8 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('code');
             $table->integer('price');
-            $table->string('file_path');
-            $table->integer('count');
+            $table->string('image');
             $table->timestamps();
         });
     }

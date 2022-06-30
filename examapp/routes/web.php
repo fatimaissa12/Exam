@@ -2,7 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Prodect\Show;
+use App\Http\Livewire\Prodect\Add;
+use App\Http\Livewire\Prodect\Update;
+
+
+
+
 use App\Http\Livewire\Home;
+
 
 
 
@@ -23,7 +30,10 @@ Route::middleware([ 'auth:sanctum',
 
 
 Route::middleware(['auth:sanctum'])->group(function () {
-    Route::get('/prodect', Show::class)->name('prodect');
+    Route::get('/showprodect', Show::class)->name('showprodect');
+    Route::get('/addprodect', Add::class)->name('addprodect');
+    Route::get('/editprodect/{prodect_id}', Update::class)->name('editprodect');
+
     Route::get('/Home', Home::class)->name('Home');
     
 });
