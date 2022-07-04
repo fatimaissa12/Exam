@@ -1,5 +1,5 @@
 <div>
-    <div class="  container mt-2 mx-auto bg-white px-5 py-5 rounded-none">
+    <div class="container mt-2 mx-auto bg-white px-5 py-5 rounded-none">
         <section class=" dark:bg-gray-800 dark:text-gray-50">
             @if (session()->has('message'))
             <div class="alert alert-success">

@@ -34,7 +34,7 @@ class Show extends Component
     {
         
         return view('livewire.prodect.show',[
-            'prodects' =>  Prodect::paginate(1),
+            'prodects' =>  Prodect::paginate(4),
         ]);
     }
 }

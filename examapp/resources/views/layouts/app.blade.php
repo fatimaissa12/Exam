@@ -18,6 +18,7 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body class="font-sans antialiased">
@@ -41,7 +42,7 @@
 
                 <!-- Page Content -->
                 <main>
-                        {{ $slot }}
+                    {{ $slot }}
                 </main>
             </div>
 
@@ -51,6 +52,15 @@
     @stack('modals')
 
     @livewireScripts
+
+    @livewire('livewire-ui-modal')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <x-livewire-alert::scripts />
+
+    <script src="{{ asset('vendor/livewire-alert/livewire-alert.js') }}"></script>
+
+    <x-livewire-alert::flash />
 </body>
 
 </html>
