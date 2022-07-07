@@ -1,9 +1,9 @@
 <div>
-<div class="mx-auto  mt-2 bg-white px-5 py-5 rounded-none">
+    <div class="mx-auto  mt-2 bg-white px-5 py-5 rounded-none">
         <section class=" dark:bg-gray-800 dark:text-gray-50">
-            <form  wire:submit.prevent="update"
+            <form wire:submit.prevent="update"
                 class="container flex flex-col mx-auto space-y-0 ng-untouched ng-pristine ng-valid">
-                <input type="hidden" >
+                <input type="hidden">
                 <fieldset class="grid grid-cols-4 gap-6  rounded  dark:bg-gray-900">
                     <div class="space-y-2 col-span-full lg:col-span-1">
                         <p class="font-semibold text-xl">Edit Product</p>
@@ -29,7 +29,7 @@
                             <label class="text-sm">Photo</label>
                             <input type="file" wire:model="image"
                                 class=" border border-gray-300 text-gray-900 text-sm rounded-none  block w-full p-2 ">
-                               
+
                         </div>
                         <div class=" pt-2 col-span-full sm:col-span-2">
                             <label class="text-sm">Selling Price</label>
@@ -49,5 +49,5 @@
                 </fieldset>
             </form>
         </section>
-    </div> 
+    </div>
 </div>

@@ -8,49 +8,61 @@ use App\Models\Category;
 
 class Categorydata extends Component
 {
+
     use LivewireAlert;
     public $name;
     public $modal = false;
-
+    public $category;
+    public $category_id;
     protected $listeners = [
 
         '$refresh',
     ];  
 
+
     protected $rules = [
         'name' => 'required',
     ];
 
+
     public function add()
     {
+        $this->validate();
+
         Category::create([
           'name' => $this->name,
+          
         ]);
 
-       $this->validate();
-       $data = [
-           'name' => $this->name,
-       ];
-
-      
+       $this->modal = false;
        $this->resetInputFields();
+       
+       $this->alert('success', ' sucesfully created ', [
+        'position' => 'top-end',
+        'timer' => 3000,
+        'toast' => true,
+    ]);
        $this->emitTo('master-data.categorydata' ,'$refresh');
     }
 
     private function resetInputFields(){
-        $this-> name= '';
+        $this->name = '';
     }
-    
+
+    public function update()
+    {
+        $this->validate();
+        Category::find($this->category_id)->update([
+            'name' => $this->name,
+          ]);
+          $this->resetInputFields();
+    }
+
     public function openModalToCreat()
     {
         $this->resetInputFields();
         $this->modal = true;
-    }
-
-    public function closeModal()
-    {
-        $this->modal = false;
-        $this->emitTo('master-data.categorydata' ,'$refresh');
+       
     }
 
     public function delete($id)
@@ -60,13 +72,26 @@ class Categorydata extends Component
 
     }
 
+    public function openModalToUpadte($id)
+    {
+       $this->category_id = $id;
+       $this->modal = true;
+       $this->loadeModel();
+    }
+
+
+    public function loadeModel()
+    {
+        $data = Category::find($this->category_id);
+        $this->name = $data->name;
+    }
+
     public function paginationView()
     {
         return 'vendor.livewire.tailwind';
 
     }
    
-
     public function render()
     {
         return view('livewire.master-data.categorydata',[

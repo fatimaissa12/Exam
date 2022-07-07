@@ -16,13 +16,12 @@ class Update extends Component
     public $prodect_id;
 
     
-   
-
     public function mount($prodect_id)
     {
 
         $this->$prodect_id = $prodect_id;
     if ($prodect_id) {
+
 
         $prodect = Prodect::findOrFail($this->prodect_id);
         $this->name = $prodect->name;
@@ -34,8 +33,7 @@ class Update extends Component
     }
 
     public function update()
-    {
-        
+    { 
        
         $prodect = Prodect::findOrFail($this->prodect_id);
         $prodect->edit([
@@ -45,6 +43,7 @@ class Update extends Component
             'price'=>$this->price,
 
         ]);
+        
     }
     public function render()
     {

@@ -10,7 +10,7 @@
                 Category Index
             </p>
         </div>
-        <button wire:click="openModalToCreat" wire:loading.attr="disabled"
+        <button wire:click="openModalToCreat"
             class="text-white bg-blue-700 hover:bg-blue-800  font-medium rounded text-xs px-6 py-2 mr-2 mb-4 ">
             Creat New
         </button>
@@ -39,7 +39,8 @@
                             </td>
                             <td class="px-3 py-1 text-left border border-gray-200">
                                 <span>
-                                    <button type="button" class="border border-amber-400 px-1 py-1 rounded">
+                                    <button type="button" class="border border-amber-400 px-1 py-1 rounded"
+                                        wire:click="openModalToUpadte({{$category->id}})">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="13px" height="13px" fill="none"
                                             class="text-red-300" viewBox="0 0 24 24" stroke="currentColor"
                                             stroke-width="2">
@@ -74,30 +75,33 @@
     </div>
     <x-jet-dialog-modal wire:model="modal">
         <x-slot name="title">
-            Category product
+        Category product {{$category_id}}
         </x-slot>
         <x-slot name="content">
-            <section class="w-full py-4 mx-auto space-y-4 rounded-none">
-                <h1 class="text-sm text-gray-400 uppercase"></h1>
-                <form wire:submit.prevent='add' class="space-y-4" id="SubmitForm">
-                    <div>
-                        <x-jet-label for="name" value="category" />
-                        <x-jet-input wire:model.debounce.300ms="name" class="w-full" name="name" id="name"
-                            type="text" />
-                        <x-jet-input-error for="name" />
-                    </div>
-                </form>
-            </section>
+            <div>
+                <x-jet-label for="name" value="category" />
+                <x-jet-input wire:model.debounce.300ms="name" class="w-full" name="name" id="name" type="text" />
+                <x-jet-input-error for="name" />
+            </div>
         </x-slot>
         <x-slot name="footer">
-            <x-jet-secondary-button wire:click="closeModal" type="submit"
+            <x-jet-secondary-button wire:click="$set('modal' , false)"  wire:loading.attr='disabled' 
                 class="bg-gray-500 text-white hover:bg-gray-300">
                 Close
             </x-jet-secondary-button>
-            <x-jet-secondary-button wire:target='add' wire:loading.attr='disabled' type="submit" form="SubmitForm"
+            @if($category_id)
+            <x-jet-secondary-button wire:click="update" wire:loading.attr='disabled'
+                class="bg-blue-800 text-white">
+                Update
+            </x-jet-secondary-button>
+            @else
+            <x-jet-secondary-button wire:click="add()" wire:loading.attr='disabled'
                 class="bg-blue-800 text-white">
                 Save
             </x-jet-secondary-button>
+            @endif
+            
         </x-slot>
     </x-jet-dialog-modal>
+
 </div>
