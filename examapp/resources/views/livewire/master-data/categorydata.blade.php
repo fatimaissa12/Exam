@@ -24,7 +24,6 @@
                             <th class="p-2.5 text-left border border-gray-200 bg-gray-100">No</th>
                             <th class="p-2.5 text-left border border-gray-200">Category</th>
                             <th class="p-2.5 text-left border border-gray-200">Action</th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -75,7 +74,7 @@
     </div>
     <x-jet-dialog-modal wire:model="modal">
         <x-slot name="title">
-        Category product {{$category_id}}
+            Category product {{$category_id}}
         </x-slot>
         <x-slot name="content">
             <div>
@@ -85,23 +84,19 @@
             </div>
         </x-slot>
         <x-slot name="footer">
-            <x-jet-secondary-button wire:click="$set('modal' , false)"  wire:loading.attr='disabled' 
+            <x-jet-secondary-button wire:click="$set('modal' , false)" wire:loading.attr='disabled'
                 class="bg-gray-500 text-white hover:bg-gray-300">
                 Close
             </x-jet-secondary-button>
             @if($category_id)
-            <x-jet-secondary-button wire:click="update" wire:loading.attr='disabled'
-                class="bg-blue-800 text-white">
+            <x-jet-secondary-button wire:click="update" wire:loading.attr='disabled' class="bg-blue-800 text-white">
                 Update
             </x-jet-secondary-button>
             @else
-            <x-jet-secondary-button wire:click="add()" wire:loading.attr='disabled'
-                class="bg-blue-800 text-white">
+            <x-jet-secondary-button wire:click="add()" wire:loading.attr='disabled' class="bg-blue-800 text-white">
                 Save
             </x-jet-secondary-button>
             @endif
-            
         </x-slot>
     </x-jet-dialog-modal>
-
 </div>

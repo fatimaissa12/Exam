@@ -2,6 +2,7 @@
     <div class="mx-auto  mt-2 bg-white px-5 py-5 rounded-none">
         <section class=" dark:bg-gray-800 dark:text-gray-50">
             <form wire:submit.prevent="update"
+            
                 class="container flex flex-col mx-auto space-y-0 ng-untouched ng-pristine ng-valid">
                 <input type="hidden">
                 <fieldset class="grid grid-cols-4 gap-6  rounded  dark:bg-gray-900">

@@ -13,7 +13,6 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
     @livewireStyles
 
     <!-- Scripts -->
@@ -45,7 +44,6 @@
                     {{ $slot }}
                 </main>
             </div>
-
         </div>
     </div>
 
@@ -53,14 +51,39 @@
 
     @livewireScripts
 
-    @livewire('livewire-ui-modal')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <x-livewire-alert::scripts />
+    
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <x-livewire-alert::scripts />
+    <script>
+    window.addEventListener('show-success-confirmation', event => {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            
+        })
 
-    <script src="{{ asset('vendor/livewire-alert/livewire-alert.js') }}"></script>
+        Toast.fire({
+                icon: 'success',
+                title: 'Creat Category successfully',
+                padding: '0.5rem',
 
-    <x-livewire-alert::flash />
+               
+                
+            
+
+            }) 
+         
+            
+           
+
+    });
+    </script>
+
 </body>
 
 </html>

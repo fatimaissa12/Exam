@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Livewire\MasterData;
-
-use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use App\Models\Category;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class Categorydata extends Component
 {
@@ -36,13 +35,17 @@ class Categorydata extends Component
 
        $this->modal = false;
        $this->resetInputFields();
-       
-       $this->alert('success', ' sucesfully created ', [
+       $this->alert('success', 'تمت الاضافة', [
         'position' => 'top-end',
         'timer' => 3000,
         'toast' => true,
+        'padding' => '0.5rem',
+        'timerProgressBar'=> true,
+       
+       
     ]);
        $this->emitTo('master-data.categorydata' ,'$refresh');
+
     }
 
     private function resetInputFields(){

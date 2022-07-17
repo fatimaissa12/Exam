@@ -12,21 +12,14 @@ module.exports = {
     ],
 
     theme: {
-
-        backgroundSize: {
-            'auto': 'auto',
-            'cover': 'cover',
-            'contain': 'contain',
-            '50%': '50%',
-            '16': '4rem',
-        },
-
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                'gold': '#FBC740',
+                midnight: {
+                    50: '#0C2D48',
+                },
             },
         },
     },
