@@ -1,5 +1,5 @@
 <!-- Navigation Links -->
-<ul class="space-y-2">
+<ul class="space-y-2 mt-2">
     <li>
         <a href="{{ route('dashboard') }}"
             class="flex items-center p-2 text-base font-normal text-gray-900 rounded-none  hover:bg-blue-100">
@@ -11,13 +11,13 @@
         </a>
     </li>
     <li>
-        <a href="{{ route('category') }}"
+        <a href="{{ route('Gropproduct') }}"
             class="flex items-center p-2 text-base font-normal text-gray-900 rounded-none dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
             <svg style="color: white"  class="ml-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-circle" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" fill="white"></path>
             </svg>
-            <span class="flex-1 ml-3 whitespace-nowrap">Category</span>
+            <span class="flex-1 ml-3 whitespace-nowrap">Group product</span>
         </a>
         <!-- <div>
             <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider"
@@ -56,13 +56,13 @@
         </div> -->
     </li>
     <li>
-        <a href="#"
+        <a href="{{ route('category') }}"
             class="flex items-center p-2 text-base font-normal text-gray-900 rounded-none dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
             <svg style="color: white" class="ml-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-circle" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" fill="white"></path>
             </svg>
-            <span class="flex-1 ml-3 whitespace-nowrap">xx</span>
+            <span class="flex-1 ml-3 whitespace-nowrap">Category</span>
         </a>
     </li>
     <li>

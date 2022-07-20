@@ -15,7 +15,7 @@
             Creat New
         </button>
     </div>
-    <div class=" container mt-2 mx-auto bg-white px-5 py-5 rounded-none">
+    <div class=" container  mx-auto bg-white  rounded-none">
         <div class="container  mx-auto rounded-md sm:p-4 dark:text-gray-100 dark:bg-gray-900">
             <div class="overflow-x-auto">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 border border-gray-200 mt-4 ">

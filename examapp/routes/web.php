@@ -5,7 +5,7 @@ use App\Http\Livewire\Prodect\Show;
 use App\Http\Livewire\Prodect\Add;
 use App\Http\Livewire\Prodect\Update;
 use App\Http\Livewire\MasterData\Categorydata;
-
+use App\Http\Livewire\MasterData\Gropproduct;
 
 
 use App\Http\Livewire\Home;
@@ -14,7 +14,7 @@ use App\Http\Livewire\Home;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 Route::middleware([ 'auth:sanctum',
@@ -35,7 +35,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/editprodect/{prodect_id}', Update::class)->name('editprodect');
     Route::get('/category', Categorydata::class)->name('category');
     Route::get('/Home', Home::class)->name('Home');
-    
+    Route::get('/gropproduct', Gropproduct::class)->name('Gropproduct');
 });
 
 
