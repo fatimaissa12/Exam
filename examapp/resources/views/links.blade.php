@@ -72,7 +72,7 @@
                 class="bi bi-circle" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" fill="white"></path>
             </svg>
-            <span class="flex-1 ml-3 whitespace-nowrap">Users</span>
+            <span class="flex-1 ml-3 whitespace-nowrap">Supplier</span>
         </a>
     </li>
     <li>
@@ -92,7 +92,7 @@
                 class="bi bi-circle" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" fill="white"></path>
             </svg>
-            <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
+            <span class="flex-1 ml-3 whitespace-nowrap">Purchase</span>
         </a>
     </li>
     <li>
@@ -102,7 +102,7 @@
                 class="bi bi-circle" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" fill="white"></path>
             </svg>
-            <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
+            <span class="flex-1 ml-3 whitespace-nowrap"> Receive order</span>
         </a>
     </li>
 </ul>

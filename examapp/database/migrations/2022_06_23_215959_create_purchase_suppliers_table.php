@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('purchase_suppliers', function (Blueprint $table) {
+        Schema::create('purchase__suppliers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('purchase_id')->nullable()->constrained('purchases')->onDelete('set null');
             $table->foreignId('supplier_id')->nullable()->constrained('suppliers')->onDelete('set null');

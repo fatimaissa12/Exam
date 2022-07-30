@@ -38,6 +38,7 @@
                             </td>
                             <td class="px-3 py-1 text-left border border-gray-200">
                                 <span>
+                                    
                                     <button type="button" class="border border-amber-400 px-1 py-1 rounded"
                                         wire:click="openModalToUpadte({{$category->id}})">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="13px" height="13px" fill="none"

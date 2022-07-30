@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Group_Product extends Model
 {
     use HasFactory;
+    
+    protected $fillable =['name'];
+    
     public function prodects()
     {
         return $this->hasMany(Prodect::class);
