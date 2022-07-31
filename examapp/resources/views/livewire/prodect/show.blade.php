@@ -64,15 +64,16 @@
                                                 d="M3 3a1 1 0 000 2h11a1 1 0 100-2H3zM3 7a1 1 0 000 2h5a1 1 0 000-2H3zM3 11a1 1 0 100 2h4a1 1 0 100-2H3zM13 16a1 1 0 102 0v-5.586l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 101.414 1.414L13 10.414V16z" />
                                         </svg></button>
 
-                                    <a href="{{ route('editprodect',['prodect_id'=>$prodect->id]) }}"
-                                        class=" border border-amber-400 px-1 py-1  rounded">
+                                        <button type="button" class="border border-amber-400 px-1 py-1 rounded">  
+                                        <a href="{{ route('editprodect',['prodect_id'=>$prodect->id]) }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="13px" height="13px" fill="none"
                                             class="text-red-300" viewBox="0 0 24 24" stroke="currentColor"
                                             stroke-width="2">
                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                 d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                        </svg></a>
-
+                                        </svg>
+                                        </a>
+                                    </button>
 
                                     <button type="button" wire:click="delete({{$prodect->id}})"
                                         class="border border-amber-400 px-1 py-1  rounded">

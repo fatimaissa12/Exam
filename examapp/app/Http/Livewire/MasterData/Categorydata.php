@@ -11,7 +11,6 @@ class Categorydata extends Component
     use LivewireAlert;
     public $name;
     public $modal = false;
-    public $category;
     public $category_id;
     protected $listeners = [
 

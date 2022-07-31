@@ -38,12 +38,15 @@
                             </td>
                             <td class="px-3 py-1 text-left border border-gray-200">
                                 <span>
-                                <button type="button" class="border border-amber-400 px-1 py-1 rounded">
+                                    <button type="button" class="border border-amber-400 px-1 py-1 rounded">  
+                                        <a href="{{ route('productdetail') }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="13px" height="13px" class=""
                                             viewBox="0 0 20 20" fill="currentColor">
                                             <path
                                                 d="M3 3a1 1 0 000 2h11a1 1 0 100-2H3zM3 7a1 1 0 000 2h5a1 1 0 000-2H3zM3 11a1 1 0 100 2h4a1 1 0 100-2H3zM13 16a1 1 0 102 0v-5.586l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 101.414 1.414L13 10.414V16z" />
-                                        </svg></button>
+                                        </svg>
+                                        </a>
+                                    </button>
                                     <button type="button" class="border border-amber-400 px-1 py-1 rounded"
                                         wire:click="openModalToUpadte({{$group->id}})">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="13px" height="13px" fill="none"
@@ -81,7 +84,7 @@
     </div>
     <x-jet-dialog-modal wire:model="modal">
         <x-slot name="title">
-           creat Grop 
+            Creat Grop {{$group_id}}
         </x-slot>
         <x-slot name="content">
             <div>
@@ -95,15 +98,15 @@
                 class="bg-gray-500 text-white hover:bg-gray-300">
                 Close
             </x-jet-secondary-button>
-            
+            @if($group_id)
             <x-jet-secondary-button wire:click="update" wire:loading.attr='disabled' class="bg-blue-800 text-white">
                 Update
             </x-jet-secondary-button>
-      
+            @else
             <x-jet-secondary-button wire:click="add()" wire:loading.attr='disabled' class="bg-blue-800 text-white">
                 Save
             </x-jet-secondary-button>
-           
+            @endif
         </x-slot>
     </x-jet-dialog-modal>
 </div>

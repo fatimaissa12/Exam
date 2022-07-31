@@ -12,7 +12,7 @@ class Gropproduct extends Component
     use LivewireAlert;
     public $name;
     public $modal = false;
-
+    public $group_id;
     protected $listeners = [
 
         '$refresh',
@@ -56,7 +56,35 @@ class Gropproduct extends Component
         $this->name = '';
     }
 
+    public function update()
+    {
+        $this->validate();
+        Group_Product::find($this->group_id)->update([
+            'name' => $this->name,
+          ]);
+          $this->resetInputFields();
+    }
 
+    public function delete($id)
+    {
+        Group_Product::findOrFail($id)->delete();
+        $this->emitTo('master-data.categorydata' ,'$refresh');
+
+    }
+
+    public function openModalToUpadte($id)
+    {
+       $this->group_id = $id;
+       $this->modal = true;
+       $this->loadeModel();
+    }
+
+
+    public function loadeModel()
+    {
+        $data = Group_Product::find($this->group_id);
+        $this->name = $data->name;
+    }
 
     public function render()
     {
