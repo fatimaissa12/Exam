@@ -5,6 +5,7 @@
                 <div>
                     <h4> Group product detail</h4>
                 </div>
+
                 <div class="container mt-10 mx-auto flex justify-between">
                     <div>
                         <p class="text-xl font-semibold leading-tight ml-1">
@@ -26,17 +27,17 @@
                         </tr>
                     </thead>
                     <tbody>
-
+                        <!-- @forelse($products as $product) -->
                         <tr class="text-xs text-right border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-800">
 
                             <td class="p-4 text-left border border-gray-200 bg-gray-100">
-                                <span> </span>
+                                <!-- <span> {{$loop->iteration}}</span> -->
                             </td>
                             <td class="p-4 text-left border border-gray-200 bg-gray-100">
-                                <span> </span>
+                                <!-- <span> {{$product->name}}</span> -->
                             </td>
                             <td class="px-3 py-2  text-left border border-gray-200">
-                                <span> </span>
+                                <!-- <span> {{$product->code}}</span> -->
                             </td>
                             <td class="px-3 py-1 text-left border border-gray-200">
                                 <span>
@@ -51,9 +52,11 @@
                                 </span>
                             </td>
 
+                            <!-- @empty
                             <td colspan="4" class="px-6 py-4 ">
                                 Not found
                             </td>
+                            @endforelse -->
 
                         </tr>
 
@@ -80,11 +83,15 @@
             Grop product detail
         </x-slot>
         <x-slot name="content">
-            <div>
-                <x-jet-label for="name" value="category" />
-                <x-jet-input wire:model.debounce.300ms="name" class="w-full" name="name" id="name" type="text" />
-                <x-jet-input-error for="name" />
+            <x-jet-label for="name" value="Select Product"/>
+            @if(!empty($products))
+            <div class="absolut z-10 list-group bg-white w-full rounded-none ">
+                <x-jet-input wire:model.debounce.300ms="search" class="w-full" name="search" type="search" />
+                @foreach($products as $product)
+                <a href="{{ route('showprodect' , $product('id')) }}"> {{$product->name}}</a>
+                @endforeach
             </div>
+            @endif
         </x-slot>
         <x-slot name="footer">
             <x-jet-secondary-button wire:click="$set('modal' , false)" wire:loading.attr='disabled'
